@@ -5,10 +5,10 @@ const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.close-modal');
 
 const btnShowModal = document.querySelectorAll('.show-modal');
-console.log(btnShowModal);
+//console.log(btnShowModal);
 
 const openModal = function () {
-  console.log('Button clicked');
+  //console.log('Button clicked');
   modal.classList.remove('hidden'); // no dot, dot is only for selector
   overlay.classList.remove('hidden');
 };
@@ -34,3 +34,12 @@ overlay.addEventListener('click', closeModal);
   modal.classList.add('hidden');
   overlay.classList.add('hidden');
 });*/
+
+document.addEventListener('keydown', function (e) {
+  //console.log('A key was pressed');
+  //console.log(e); // see the object
+  //console.log(e.key); // see the property of key
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
+}); // all events
